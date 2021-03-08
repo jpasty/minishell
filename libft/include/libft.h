@@ -3,19 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpasty <jpasty@student.21-school.ru>       +#+  +:+       +#+        */
+/*   By: lseema <lseema@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/21 19:16:24 by jpasty            #+#    #+#             */
-/*   Updated: 2020/06/21 19:16:24 by jpasty           ###   ########.fr       */
+/*   Created: 2019/04/10 16:42:32 by lseema            #+#    #+#             */
+/*   Updated: 2021/03/08 17:56:59 by jpasty           ###   ########.ru       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 128
+# define FD_MAX 255
 
 # include <string.h>
+# include <fcntl.h>
 # include <stdlib.h>
+# include <sys/types.h>
 # include <unistd.h>
+# include "ft_printf.h"
 
 typedef struct		s_list
 {
@@ -102,4 +107,5 @@ int					ft_isspace(int c);
 void				ft_free_split(char **split);
 void				ft_swap(int *a, int *b);
 
+int 				get_next_line(const int fd, char **line);
 #endif
